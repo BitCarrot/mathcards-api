@@ -57,5 +57,26 @@ export default [
     method: 'DELETE',
     path: '/api/v1/cat',
     handler: 'CatController.update'
+  },
+  
+  {
+    method: 'POST',
+    path: '/api/v1/user',
+    handler: 'UserController.create'
+  },
+  {
+    method: 'POST',
+    path: '/api/v1/auth/register',
+    handler: 'AuthController.register'
+  },
+  {
+    method: 'POST',
+    path: '/api/v1/auth/login',
+    handler: 'AuthController.login'
+  },
+  {
+    method: 'GET',
+    path: '/api/v1/users',
+    handler: 'UserController.find'
   }
 ];

@@ -18,12 +18,10 @@
     "trailsjs"
   ],
   "dependencies": {
-    "sails-mongo": "^0.12.2",
-    "sails-memory": "^0.10.7",
     "babel-cli": "^6.24.1",
     "babel-preset-node6": "^11.0.0",
     "babel-preset-stage-2": "^6.24.1",
-    "bcrypt-nodejs": "^0.0.3",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.1",
     "boom": "^5.2.0",
     "change-case": "^3.0.1",
@@ -36,6 +34,8 @@
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "safe-access": "^0.1.0",
+    "sails-memory": "^0.10.7",
+    "sails-mongo": "^0.12.2",
     "trailpack-express": "^2.0.3",
     "trailpack-footprints": "^2.0.0",
     "trailpack-repl": "v2-latest",
@@ -48,7 +48,6 @@
   "devDependencies": {
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.3.0",
     "mocha": "^2.5",
     "nodemon": "^1.11.0",
@@ -56,7 +55,7 @@
   },
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha --compilers js:babel-core/register",
-    "start": "node ./node_modules/nodemon/bin/nodemon -e js -x 'npm run lint && node ./node_modules/babel-cli/bin/babel-node server.js || exit 1'",
+    "start": "node ./node_modules/nodemon/bin/nodemon -e js -x 'node ./node_modules/babel-cli/bin/babel-node server.js || exit 1'",
     "build": "docker build -t jamrizzi/trailblazer:latest -f ./Dockerfile .",
     "push": "docker push -t jamrizzi/trailblazer:latest",
     "run": "docker run --name some-trailblazer --rm --link some-mongo:db -p 3000:3000 jamrizzi/trailblazer:latest",
